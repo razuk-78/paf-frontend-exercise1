@@ -1,0 +1,10 @@
+# Ignore
+*
+
+# Keep
+!dist/api/games/lists.json
+!dist/resources/*.png
+!src/*
+!index.html
+!package-lock.json
+!package.json

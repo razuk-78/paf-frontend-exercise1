@@ -1,0 +1,14 @@
+{
+  "name": "paf-frontend-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Johan Westling",
+  "license": "ISC",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel $npm_package_main"
+  },
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}

@@ -1,0 +1,7 @@
+.cache/
+dist/*
+!dist/api/
+!dist/resources/
+node_modules/
+design/paf-frontend-design.xd
+*.tgz
