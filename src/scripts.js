@@ -22,18 +22,19 @@ let A = function (obj) {
     });
     console.log(obja);
   };
-
+  let hr = document.createElement("hr");
   let group = document.createElement("div");
   let title = document.createElement("h2");
   let descrition = document.createElement("h3");
   title.innerHTML = obj.title;
   descrition.innerHTML = obj.description;
   group.append(title);
+  group.append(hr);
   group.append(descrition);
   let B = function (comp) {
     console.log("from comp ", comp);
     let Cont = document.createElement("div");
-    let title = document.createElement("h3");
+    let title = document.createElement("h4");
     title.innerHTML = comp.title;
     Cont.id = comp.id;
 
@@ -51,7 +52,6 @@ let A = function (obj) {
       return div;
     };
     Cont.append(title);
-    Cont.append(comp.item);
     createItems(Cont, comp.items, C);
     return Cont;
   };
