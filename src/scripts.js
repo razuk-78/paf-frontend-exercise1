@@ -69,16 +69,18 @@ let historyProvider = {
 };
 let elementHider = function (data) {
   // this function will hide all unamtched elements
-  document.querySelector(".item").forEach((element) => {
-    if (element.innerHTML !== data) {
-      element.setAttribute("style", "display:none");
-    } else {
-      element.setAttribute("style", "display:block");
-    }
-  });
+  let elements = document.querySelector(".item");
+  if (elements == typeof Array)
+    elements.forEach((element) => {
+      if (element.innerHTML !== data) {
+        element.setAttribute("style", "display:none");
+      } else {
+        element.setAttribute("style", "display:block");
+      }
+    });
 };
-document.getElementById("search").addEventListener("change", (evt) => {
-  console.log(document.getElementById("search").value);
-  console.log("frm evt");
+document.getElementById("search").addEventListener("click", (evt) => {
+  let val = document.getElementById("searchTxt").value;
+  if (val) elementHider(val);
   //fun("hello");
 });
