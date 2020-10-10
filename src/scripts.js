@@ -11,8 +11,8 @@ let server = {
   }
 };
 
-server.getFile((d) => {
-  A(d);
+server.getFile((data) => {
+  A(data);
 });
 
 let A = function (obj) {
@@ -20,7 +20,6 @@ let A = function (obj) {
     items.forEach((elm) => {
       obja.append(component(elm));
     });
-    console.log(obja);
   };
   let hr = document.createElement("hr");
   let group = document.createElement("div");
@@ -32,7 +31,6 @@ let A = function (obj) {
   group.append(hr);
   group.append(descrition);
   let B = function (comp) {
-    console.log("from comp ", comp);
     let Cont = document.createElement("div");
     let title = document.createElement("h4");
     title.innerHTML = comp.title;
@@ -57,5 +55,30 @@ let A = function (obj) {
   };
   createItems(group, obj.lists, B);
   document.querySelector("#main").append(group);
-  console.log(document.querySelector("#main"));
+  // console.log(document.querySelector("#main"));
 };
+
+let historyProvider = {
+  history: [],
+  getHistory: function () {
+    return this.history;
+  },
+  addHistory: function (data) {
+    this.history.push(data);
+  }
+};
+let elementHider = function (data) {
+  // this function will hide all unamtched elements
+  document.querySelector(".item").forEach((element) => {
+    if (element.innerHTML !== data) {
+      element.setAttribute("style", "display:none");
+    } else {
+      element.setAttribute("style", "display:block");
+    }
+  });
+};
+document.getElementById("search").addEventListener("change", (evt) => {
+  console.log(document.getElementById("search").value);
+  console.log("frm evt");
+  //fun("hello");
+});
